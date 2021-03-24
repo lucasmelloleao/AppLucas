@@ -1,0 +1,65 @@
+<body id="page-top">
+
+
+        <!-- Sidebar -->
+
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+             
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800"> <% action %></h1>
+                   
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                       <div class="card-body">
+                    <% if @category.errors.any? %>
+                    <div class="alert alert-danger alert-danger" role="alert" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="True">X  </button>
+                      <ul> 
+                      <% @category.errors.full_messages.each do |message| %>
+                      
+                       <li><%= message  %> </li>
+                        <% end %> 
+                       </ul>
+                
+                    </div>
+                   
+                   <% end %> 
+               
+
+
+                            <div class= "col-lg-6">
+                            <%= form_for ([:backoffice,  @category]) do |f|  %>                        
+                               <div class= "form-group">
+                                <label> Descrição </label>
+                                <%= f.text_field :description, class: "form-control" %>
+                            </div>  
+                                <button type="submit" class= "btn btn-default"> Salvar
+                                </button>
+                            
+                            <% end %> 
+                            </div>
+                        </div>
+
+                    
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+          
